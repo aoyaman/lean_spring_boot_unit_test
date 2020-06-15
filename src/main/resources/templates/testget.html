@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
+    <head th:replace="common :: meta_header('ホーム',~{::link},~{::script})">
+        <!-- このページ固有で読み込むCSS/JS -->
+    </head>
+
+<body>
+    <div class="container">
+        <div th:replace="common :: header"></div>
+
+        <h3>test of get</h3>
+
+        <p>strError : <span th:text="${strError}"></span></p>
+        <p>intValue :<span th:text="${intValue}"></span></p>
+
+        <form action="/testpost2" method="post">
+          <div class="input-group mb-3">
+            <input type="number" name="intvalue" class="form-control" placeholder="数値を入力してね" >
+            <input type="submit" class="btn btn-primary" value="登録">
+          </div>
+      </form>
+
+    </div>
+</body>
+
+</html>

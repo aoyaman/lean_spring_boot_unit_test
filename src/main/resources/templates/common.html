@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
+<head th:fragment="meta_header(title,links,scripts)">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+  <!-- css -->
+  <link th:href="@{/css/header.css}" rel="stylesheet">
+
+
+  <title th:text="${title}+' | spring boot unit test'">Learning spring boot unit test</title>
+
+  <th:block th:replace="${links} ?: _" />
+  <th:block th:replace="${scripts} ?: _" />
+</head>
+
+<body>
+  <header th:fragment="header">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="header-bar">
+      <a class="navbar-brand" href="/">Learning spring boot unit test</a>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/testget">GETテスト</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+</body>
+
+</html>
